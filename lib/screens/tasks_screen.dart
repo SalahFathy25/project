@@ -17,7 +17,7 @@ class TasksScreen extends StatelessWidget {
         .where((task) => task.isDone)
         .length;
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endContained,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).push(
@@ -27,12 +27,12 @@ class TasksScreen extends StatelessWidget {
             ),
           );
         },
-        backgroundColor: Colors.teal[400],
+        backgroundColor: const Color.fromARGB(255, 187, 131, 111),
         tooltip: 'Add Task',
         shape: const CircleBorder(),
         child: const Icon(Icons.add, color: Colors.white),
       ),
-      backgroundColor: Colors.teal,
+      backgroundColor: const Color.fromARGB(255, 112, 95, 82),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
         child: Column(
@@ -68,7 +68,7 @@ class TasksScreen extends StatelessWidget {
                     text: '$totalDoneTasks',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Color.fromARGB(255, 255, 56, 56),
                     ),
                   ),
                   const TextSpan(
@@ -82,7 +82,7 @@ class TasksScreen extends StatelessWidget {
                     text: '$totalTasks',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Color.fromARGB(255, 255, 56, 56),
                     ),
                   ),
                   const TextSpan(
@@ -97,9 +97,10 @@ class TasksScreen extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.all(
+                  border: Border.all(color: Colors.grey, width: 3),
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(20),
                   ),
                 ),

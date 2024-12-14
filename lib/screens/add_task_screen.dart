@@ -12,23 +12,31 @@ class AddTaskScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     String? newTaskTitle;
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 112, 95, 82),
       appBar: AppBar(
-        
+        backgroundColor: const Color.fromARGB(255, 112, 95, 82),
+        foregroundColor: Colors.white,
       ),
       body: Container(
         padding: const EdgeInsets.all(30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text('Add Task',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.indigo[400],
-                  fontWeight: FontWeight.bold,
-                )),
-            TextField(
+            const Text(
+              'Add Task',
               textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            TextFormField(
+              textAlign: TextAlign.center,
+              cursorColor: Colors.white,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
               onChanged: (newText) {
                 newTaskTitle = newText;
               },
@@ -44,14 +52,13 @@ class AddTaskScreen extends StatelessWidget {
                   );
                   return;
                 }
-
                 Provider.of<TaskData>(context, listen: false)
                     .addTask(newTaskTitle!);
                 Navigator.pop(context);
               },
               style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.teal[400],
+                foregroundColor: Colors.black,
+                backgroundColor: Colors.white,
               ),
               child: const Text('Add'),
             ),
