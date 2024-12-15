@@ -17,9 +17,9 @@ class TasksScreen extends StatelessWidget {
         .where((task) => task.isDone)
         .length;
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.endContained,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: GestureDetector(
+        onTap: () {
           Navigator.of(context).push(
             CupertinoDialogRoute(
               context: context,
@@ -27,10 +27,19 @@ class TasksScreen extends StatelessWidget {
             ),
           );
         },
-        backgroundColor: const Color.fromARGB(255, 187, 131, 111),
-        tooltip: 'Add Task',
-        shape: const CircleBorder(),
-        child: const Icon(Icons.add, color: Colors.white),
+        child: Container(
+          width: 70,
+          height: 70,
+          decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 187, 131, 111),
+            shape: BoxShape.circle,
+          ),
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+            size: 35,
+          ),
+        ),
       ),
       backgroundColor: const Color.fromARGB(255, 112, 95, 82),
       body: Container(
@@ -44,14 +53,14 @@ class TasksScreen extends StatelessWidget {
               children: [
                 Icon(
                   Icons.playlist_add_check,
-                  size: 40,
+                  size: 48,
                   color: Colors.white,
                 ),
                 Text(
                   'ToDayDo',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 40,
+                    fontSize: 48,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -61,7 +70,7 @@ class TasksScreen extends StatelessWidget {
               TextSpan(
                 style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 18,
+                  fontSize: 22,
                 ),
                 children: [
                   TextSpan(
