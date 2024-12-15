@@ -35,7 +35,7 @@ class TasksScreen extends StatelessWidget {
             shape: BoxShape.circle,
           ),
           child: const Icon(
-            Icons.add,
+            CupertinoIcons.add,
             color: Colors.white,
             size: 35,
           ),
@@ -44,6 +44,7 @@ class TasksScreen extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 112, 95, 82),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
+        color: const Color.fromARGB(255, 112, 95, 82),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 20,
